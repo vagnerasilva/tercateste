@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    
+    <script data-require="angular.js@*" data-semver="2.0.0" src="https://code.angularjs.org/1.4.8/angular.js
+"></script>
+    <script data-require="jquery@*" data-semver="2.1.4" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="MyCtrl">
+    <h1>Hello Plunker!</h1>
+    <button class="btn btn-link" ng-click="exportToExcel('#tableToExport')">
+      <span class="glyphicon glyphicon-share"></span>
+
+
+
+
+
+ Export to Excel
+    </button>
+    <div id="tableToExport">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>index1</td>
+            <td>index2</td>
+            <td>index3</td>
+          </tr>
+          <tr>
+            <td>index1</td>
+            <td>index2</td>
+            <td>index3</td>
+          </tr>
+          <tr>
+            <td>index1</td>
+            <td>index2</td>
+            <td>index3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+</html>

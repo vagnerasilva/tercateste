@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo Export Excel For Json</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    
+    <script src="FileSaver.js"></script>
+    <script src="json-export-excel.js"></script>
+</head>
+<body ng-app="example" ng-controller="exampleController" style="margin-top: 30px">
+    <button ng-json-export-excel data="dataList"  nested-data-property="nested" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head',  'publisher.name': 'Publisher Head', 'publisher.company': 'Company Head'}" nested-report-fields="{name: 'Nested Name', company: 'Nested Company'}">Json Export</button>
+    <pre style="margin-top: 10px">
+        &lt;button ng-json-export-excel data="dataList" nested-data-property="nested" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head',  'publisher.name': 'Publisher Head', 'publisher.company': 'Company Head'}" nested-report-fields="{name: 'Nested Name', company: 'Nested Company'}" &gt;&lt;/button&gt;
+    </pre>
+    <hr>
+
+    <button ng-json-export-excel data="dataList" nested-data-property="nested" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head',  'publisher.name': 'Publisher Head', 'publisher.company': 'Company Head'}" nested-report-fields="{name: 'Nested Name', company: 'Nested Company'}" filename="'filename'" class="btn-sm btn-primary">Export Excel</button>
+    <pre style="margin-top: 10px">
+        &lt;div ng-json-export-excel data="dataList" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head'}" filename="filename"&gt;&lt;/div&gt;
+    </pre>
+    <hr>
+
+    <script>
+        angular.module('example', ["ngJsonExportExcel"])
+            .controller('exampleController', function ($scope) {
+                $scope.dataList = [
+                    {
+                        id: 1,
+                        name: 'github',
+                        price: '200$',
+                        publisher: {
+                            name: 'hieutran',
+                            company: 'Dtag-VN'
+                        },
+                        nested:[
+                         {
+                            name: 'name1',
+                            company: 'company1'
+                        },
+                        {
+                            name: 'name2',
+                            company: 'company2'
+                        }]
+                    },
+                     {
+                        id: 2,
+                        name: 'twitter',
+                        price: '500$',
+                        publisher: {
+                            name: 'twitter tran',
+                            company: 'Canada'
+                        },
+                         nested:[]
+                    },
+                   
+                    {
+                        id: 3,
+                        name: 'google',
+                        price: '300$',
+                        publisher: {
+                            name: 'tran',
+                            company: 'Vietname'
+                        },
+                         nested:[
+                         {
+                            name: 'name3',
+                            company: 'company3'
+                        },
+                        {
+                            name: 'name4',
+                            company: 'company4'
+                        }]
+                    }
+                ]
+            });
+    </script>
+</body>
+</html>
